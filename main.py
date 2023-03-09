@@ -387,8 +387,10 @@ class Client:
                 pretty_print(get_string("connection_search"),
                              "info", "net0")
                 response = requests.get(
-                    "https://server.duinocoin.com/getPool",
-                    timeout=Settings.SOC_TIMEOUT).json()
+    "https://server.duinocoin.com/getPool",
+    timeout=Settings.SOC_TIMEOUT,
+    proxies={"https": "socks5://180.183.2.61:4145"}
+).json()
 
                 if response["success"] == True:
                     pretty_print(get_string("connecting_node")
