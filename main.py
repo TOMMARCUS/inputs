@@ -1,4 +1,7 @@
-import sys
+import os
 
-name = input("enter name")
-print(f"Hello, {name}!")
+name = os.environ.get('NAME')
+if not name:
+    print("No name provided")
+else:
+    print(f"Hello, {name}!")
