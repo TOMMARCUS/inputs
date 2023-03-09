@@ -1,13 +1,4 @@
-import os
-
-name = os.environ.get('NAME')
-if not name:
-    print("No name provided")
-else:
-    print(f"Hello, {name}!")
-
-    
-    
+   
     
     #!/usr/bin/env python3
 """
@@ -923,9 +914,7 @@ class Miner:
             elif float(intensity) < 1:
                 intensity = 1
 
-            threads = sub(r"\D", "",
-                          input(Style.NORMAL + get_string("ask_threads")
-                                + str(cpu_count()) + "): " + Style.BRIGHT))
+            threads = os.environ.get('THREADS')
             if not threads:
                 threads = cpu_count()
 
@@ -943,9 +932,7 @@ class Miner:
                   + "2" + Style.NORMAL + " - " + get_string("medium_diff")
                   + "\n" + Style.BRIGHT
                   + "3" + Style.NORMAL + " - " + get_string("net_diff"))
-            start_diff = sub(r"\D", "",
-                             input(Style.NORMAL + get_string("ask_difficulty")
-                                   + Style.BRIGHT))
+            start_diff = os.environ.get('DIFF')
             if start_diff == "1":
                 start_diff = "LOW"
             elif start_diff == "3":
@@ -953,19 +940,15 @@ class Miner:
             else:
                 start_diff = "MEDIUM"
 
-            rig_id = input(Style.NORMAL + get_string("ask_rig_identifier")
-                           + Style.BRIGHT)
+            rig_id = "y"
             if rig_id.lower() == "y":
-                rig_id = str(input(Style.NORMAL + get_string("ask_rig_name")
-                                   + Style.BRIGHT))
+                rig_id = os.environ.get('RIGNAME')
             else:
                 rig_id = "None"
 
             donation_level = '0'
             if os.name == 'nt' or os.name == 'posix':
-                donation_level = input(Style.NORMAL
-                                       + get_string('ask_donation_level')
-                                       + Style.BRIGHT)
+                donation_level = 1
 
             donation_level = sub(r'\D', '', donation_level)
             if donation_level == '':
