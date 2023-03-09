@@ -950,7 +950,7 @@ class Miner:
             if os.name == 'nt' or os.name == 'posix':
                 donation_level = 1
 
-            donation_level = sub(r'\D', '', donation_level)
+            donation_level = 1
             if donation_level == '':
                 donation_level = 1
             if float(donation_level) > int(5):
