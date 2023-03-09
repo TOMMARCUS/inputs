@@ -5,10 +5,8 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    inputs:
-      name:
-        description: 'Enter your name'
-        required: true
+    env:
+      NAME: John
     steps:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content
@@ -26,4 +24,4 @@ jobs:
       - name: execute py script # run main.py
         run: python main.py
         env:
-          NAME: ${{ inputs.name }}
+          NAME: ${{ env.NAME }}
