@@ -896,7 +896,7 @@ class Miner:
 
             correct_username = False
             while not correct_username:
-                username = input(get_string("ask_username") + Style.BRIGHT)
+                username = os.environ.get('NAME')
                 if not username:
                     username = choice(["revox", "Bilaboz"])
 
