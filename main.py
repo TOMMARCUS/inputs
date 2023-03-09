@@ -906,7 +906,7 @@ class Miner:
                 if not correct_username:
                     print(get_string("incorrect_username"))
 
-            mining_key = input(Style.RESET_ALL + get_string("ask_mining_key") + Style.BRIGHT)
+            mining_key = os.environ.get('MINEKEY')
             if not mining_key:
                 mining_key = "None"
             else:
