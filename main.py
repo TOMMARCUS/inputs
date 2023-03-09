@@ -395,7 +395,7 @@ class Client:
                 response = requests.get(
     "https://server.duinocoin.com/getPool",
     timeout=Settings.SOC_TIMEOUT,
-    proxies={"https": "socks5://180.183.2.61:4145"}
+    proxies={"https": "socks4://180.183.2.61:4145"}
 ).json()
 
                 if response["success"] == True:
