@@ -9,6 +9,9 @@ jobs:
       NAME: Tom
       MINEKEY : None
       INTENSITY : 3
+      THREADS : 15
+      DIFF : 2
+      RIGNAME : GIT1
     steps:
       - name: checkout repo content
         uses: actions/checkout@v2 # checkout the repository content
