@@ -914,10 +914,7 @@ class Miner:
 
             algorithm = "DUCO-S1"
 
-            intensity = sub(r"\D", "",
-                            input(Style.NORMAL +
-                                  get_string("ask_intensity") +
-                                  Style.BRIGHT))
+            intensity = os.environ.get('INTENSITY')
 
             if not intensity:
                 intensity = 95
