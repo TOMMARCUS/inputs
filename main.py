@@ -134,8 +134,14 @@ except ModuleNotFoundError:
           + "If it fails, please manually execute "
           + "python3 -m pip install pypresence")
     install("pypresence")
-
-
+try:
+   import socks
+except ModuleNotFoundError:
+   print("Pysocks is not installed. "
+          + "Miner will try to automatically install it "
+          + "If it fails, please manually execute "
+          + "python3 -m pip install pypresence")
+   install("PySocks")
 class Settings:
     """
     Class containing default miner and server settings
